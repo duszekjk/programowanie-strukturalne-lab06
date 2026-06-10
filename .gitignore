@@ -1,0 +1,27 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+build/
+
+# IDE and workspace files
+.vs/
+*.xcworkspace
+*.xcodeproj
+*.xcuserstate
+*.sln
+*.VC.db
+
+# OS and editor metadata
+.DS_Store
+*.swp
+*.swo
+*.dSYM/
+*.target
+*.modules
+*.log
+
+# Local packaging / temp files
+*.tmp
+*.bak
