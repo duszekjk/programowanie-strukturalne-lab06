@@ -6,9 +6,6 @@ public class IpcCharacterWorldEditorTarget : TargetRules
     public IpcCharacterWorldEditorTarget(TargetInfo Target) : base(Target)
     {
         Type = TargetType.Editor;
-        DefaultBuildSettings = BuildSettingsVersion.V5;
+        DefaultBuildSettings = BuildSettingsVersion.V6;
         IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-        BuildEnvironment = TargetBuildEnvironment.Unique;
-        ExtraModuleNames.Add("IpcCharacterWorld");
-    }
-}
+        ExtraModuleNames.Add("IpcCharacterWorld
