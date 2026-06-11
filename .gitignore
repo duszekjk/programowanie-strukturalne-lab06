@@ -25,3 +25,12 @@ build/
 # Local packaging / temp files
 *.tmp
 *.bak
+
+# Packaged builds
+/Game/
+/Build_Windows/
+/Build_Linux/
+/Saved/StagedBuilds/
+*.pak
+*.ucas
+*.utoc
