@@ -14,4 +14,17 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
     GENERATED_BODY()
 
 public:
-    AIpcCharacterWorldCharacter
+    AIpcCharacterWorldCharacter();
+    virtual void Tick(float DeltaSeconds) override;
+    virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+private:
+    void MoveForward(float Value);
+    void MoveRight(float Value);
+    void Turn(float Value);
+    void LookUp(float Value);
+
+    USpringArmComponent* CameraBoom;
+    UCameraComponent* FollowCamera;
+    UCommandReceiverComponent* CommandReceiver;
+};
