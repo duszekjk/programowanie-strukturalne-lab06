@@ -3,11 +3,14 @@
 #include "Camera/CameraComponent.h"
 #include "CommandReceiverComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Engine/Engine.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 AIpcCharacterWorldCharacter::AIpcCharacterWorldCharacter()
 {
+    PrimaryActorTick.bCanEverTick = true;
+
     GetCapsuleComponent()->InitCapsuleSize(42.0f, 96.0f);
 
     bUseControllerRotationPitch = false;
@@ -30,4 +33,14 @@ AIpcCharacterWorldCharacter::AIpcCharacterWorldCharacter()
 
     CommandReceiver = CreateDefaultSubobject<UCommandReceiverComponent>(TEXT("CommandReceiver"));
     AutoPossessPlayer = EAutoReceiveInput::Player0;
+}
+
+void AIpcCharacterWorldCharacter::Tick(float DeltaSeconds)
+{
+    Super::Tick(DeltaSeconds);
+
+    if (GEngine)
+    {
+        GEngine->AddOnScreenDebugMessage(101, 0.1f, FColor::Yellow, TEXT("Collect boxes to reveal code: PS-LAB06-OK"));
+    }
 }
