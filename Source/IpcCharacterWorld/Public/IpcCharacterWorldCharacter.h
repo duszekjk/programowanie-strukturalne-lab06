@@ -14,4 +14,8 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
     GENERATED_BODY()
 
 public:
-    AIpcCharacterWorldCharacter
+    AIpcCharacterWorldCharacter();
+    virtual void Tick(float DeltaSeconds) override;
+
+private:
+    USpringArmComponent* CameraBoom;
