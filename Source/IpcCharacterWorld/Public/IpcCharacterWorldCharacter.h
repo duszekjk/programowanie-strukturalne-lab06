@@ -19,4 +19,6 @@ public:
 
 private:
     USpringArmComponent* CameraBoom;
-    UCameraComponent
+    UCameraComponent* FollowCamera;
+    UCommandReceiverComponent* CommandReceiver;
+};
