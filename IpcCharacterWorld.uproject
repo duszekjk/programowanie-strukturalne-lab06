@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.5",
+	"EngineAssociation": "5.7",
 	"Category": "Games",
 	"Description": "Unreal IPC character controller demo for system programming classes.",
 	"Modules": [
