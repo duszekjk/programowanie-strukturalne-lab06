@@ -7,6 +7,7 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UCommandReceiverComponent;
+class UStaticMeshComponent;
 
 UCLASS()
 class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
@@ -18,6 +19,9 @@ public:
     virtual void Tick(float DeltaSeconds) override;
 
 protected:
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Visual")
+    UStaticMeshComponent* BodyMesh;
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera")
     USpringArmComponent* CameraBoom;
 
