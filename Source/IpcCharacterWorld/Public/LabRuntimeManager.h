@@ -12,8 +12,6 @@ class IPCCHARACTERWORLD_API ALabRuntimeManager : public AActor
 public:
     ALabRuntimeManager();
 
-    virtual void Tick(float DeltaSeconds) override;
-
 protected:
     virtual void BeginPlay() override;
 
@@ -21,4 +19,5 @@ private:
     UFUNCTION()
     void QuitGame();
 
-    UFUNCTION
+    UFUNCTION()
+    void HandleCollectibleOverlap(AActor* Overlapped
