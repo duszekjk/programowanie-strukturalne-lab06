@@ -31,29 +31,4 @@ void AIpcCharacterWorldGameMode::StartPlay()
         if (Floor)
         {
             Floor->GetStaticMeshComponent()->SetStaticMesh(CubeMesh);
-            Floor->SetActorScale3D(FVector(20.0f, 20.0f, 0.1f));
-            Floor->SetActorLabel(TEXT("Lab Floor"));
-        }
-
-        const FVector BoxLocations[] =
-        {
-            FVector(300.0f, 0.0f, 30.0f),
-            FVector(300.0f, 300.0f, 30.0f),
-            FVector(0.0f, 300.0f, 30.0f),
-            FVector(-300.0f, 150.0f, 30.0f)
-        };
-
-        for (int32 Index = 0; Index < 4; ++Index)
-        {
-            AStaticMeshActor* Box = World->SpawnActor<AStaticMeshActor>(BoxLocations[Index], FRotator::ZeroRotator);
-            if (Box)
-            {
-                Box->GetStaticMeshComponent()->SetStaticMesh(CubeMesh);
-                Box->SetActorScale3D(FVector(0.6f, 0.6f, 0.6f));
-                Box->SetActorLabel(FString::Printf(TEXT("Collect Box %d"), Index + 1));
-            }
-        }
-    }
-
-    World->SpawnActor<ADirectionalLight>(FVector(0.0f, 0.0f, 500.0f), FRotator(-45.0f, 30.0f, 0.0f));
-}
+            Floor->SetActorScale3D(FVector(
