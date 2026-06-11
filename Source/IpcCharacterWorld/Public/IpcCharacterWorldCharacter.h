@@ -16,18 +16,3 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
 
 public:
     AIpcCharacterWorldCharacter();
-    virtual void Tick(float DeltaSeconds) override;
-
-protected:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Visual")
-    UStaticMeshComponent* BodyMesh;
-
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera")
-    USpringArmComponent* CameraBoom;
-
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera")
-    UCameraComponent* FollowCamera;
-
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="IPC")
-    UCommandReceiverComponent* CommandReceiver;
-};
