@@ -7,7 +7,6 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UCommandReceiverComponent;
-class UStaticMeshComponent;
 
 UCLASS()
 class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
@@ -15,11 +14,4 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
     GENERATED_BODY()
 
 public:
-    AIpcCharacterWorldCharacter();
-    virtual void Tick(float DeltaSeconds) override;
-
-private:
-    UStaticMeshComponent* BodyMesh;
-    USpringArmComponent* CameraBoom;
-    UCameraComponent* FollowCamera;
-    UCommandReceiverComponent
+    AIpcCharacterWorldCharacter
