@@ -7,7 +7,6 @@
 class USpringArmComponent;
 class UCameraComponent;
 class UCommandReceiverComponent;
-class UStaticMeshComponent;
 
 UCLASS()
 class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
@@ -16,6 +15,4 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldCharacter : public ACharacter
 
 public:
     AIpcCharacterWorldCharacter();
-    virtual void Tick(float DeltaSeconds) override;
-
-protected:
+   
