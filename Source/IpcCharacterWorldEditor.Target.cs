@@ -8,4 +8,6 @@ public class IpcCharacterWorldEditorTarget : TargetRules
         Type = TargetType.Editor;
         DefaultBuildSettings = BuildSettingsVersion.V6;
         IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-        ExtraModuleNames.Add("IpcCharacterWorld
+        ExtraModuleNames.Add("IpcCharacterWorld");
+    }
+}
