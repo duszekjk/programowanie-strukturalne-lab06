@@ -11,4 +11,5 @@ class IPCCHARACTERWORLD_API AIpcCharacterWorldGameMode : public AGameModeBase
 
 public:
     AIpcCharacterWorldGameMode();
+    virtual void StartPlay() override;
 };
