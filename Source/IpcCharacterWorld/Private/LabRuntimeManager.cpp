@@ -1,7 +1,6 @@
 #include "LabRuntimeManager.h"
 
 #include "Components/PrimitiveComponent.h"
-#include "Engine/Engine.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerController.h"
 #include "InputCoreTypes.h"
@@ -14,4 +13,6 @@ namespace
     const FName DiamondTag(TEXT("Diamond"));
 }
 
-ALabRuntimeManager::AL
+ALabRuntimeManager::ALabRuntimeManager()
+{
+   
