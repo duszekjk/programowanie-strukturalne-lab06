@@ -1,28 +1,13 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.7",
-	"Category": "",
+	"EngineAssociation": "5.5",
+	"Category": "Games",
 	"Description": "Unreal IPC character controller demo for system programming classes.",
 	"Modules": [
 		{
 			"Name": "IpcCharacterWorld",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "TP_ThirdPerson",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	],
-	"Plugins": [
-		{
-			"Name": "StateTree",
-			"Enabled": true
-		},
-		{
-			"Name": "GameplayStateTree",
-			"Enabled": true
 		}
 	]
 }
