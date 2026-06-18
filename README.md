@@ -6,7 +6,7 @@ This repository prepares the Unreal Engine part of the IPC lab:
 - a FIFO-based command receiver component,
 - small C examples for students,
 - a helper header for sending commands,
-- a simple launch script for the packaged Linux build,
+- launch and packaging helper scripts,
 - a student guide with build, run, and communication instructions.
 
 ## What students do
@@ -48,22 +48,24 @@ If Unreal is installed somewhere else, pass the engine path explicitly:
 .\scripts\build_editor_windows.ps1 -EngineRoot "C:\Program Files\Epic Games\UE_5.7"
 ```
 
-## Windows: package the game
+## Packaging scripts
 
-Do not package from the Unreal Editor UI on lab machines with the incomplete MSVC layout, because the editor process may not have the corrected `LIB` environment. Use the repository script instead:
+Do not package from the Unreal Editor UI on lab machines with the incomplete MSVC layout, because the editor process may not have the corrected `LIB` environment. Use the repository scripts instead.
+
+### Windows package
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
 .\scripts\package_windows.ps1
 ```
 
-By default this writes the packaged Windows build to:
+Default output:
 
 ```text
 Game\Windows
 ```
 
-That directory is ignored by Git and must not be committed. If Unreal is installed elsewhere, pass `-EngineRoot`:
+If Unreal is installed elsewhere, pass `-EngineRoot`:
 
 ```powershell
 .\scripts\package_windows.ps1 -EngineRoot "C:\Program Files\Epic Games\UE_5.7"
@@ -74,6 +76,64 @@ To package to another folder:
 ```powershell
 .\scripts\package_windows.ps1 -ArchiveDirectory "D:\IpcCharacterWorld-Windows"
 ```
+
+### Linux package
+
+Run on Linux, from the repository root:
+
+```bash
+chmod +x scripts/package_linux.sh
+./scripts/package_linux.sh
+```
+
+Default output:
+
+```text
+Game/Linux
+```
+
+If Unreal is installed elsewhere, pass `--engine-root` or set `UE_ENGINE_ROOT`:
+
+```bash
+./scripts/package_linux.sh --engine-root "$HOME/UnrealEngine"
+UE_ENGINE_ROOT="$HOME/UnrealEngine" ./scripts/package_linux.sh
+```
+
+To package to another folder:
+
+```bash
+./scripts/package_linux.sh --archive-directory "$HOME/IpcCharacterWorld-Linux"
+```
+
+### macOS package
+
+Run on macOS, from the repository root:
+
+```bash
+chmod +x scripts/package_macos.sh
+./scripts/package_macos.sh
+```
+
+Default output:
+
+```text
+Game/Mac
+```
+
+If Unreal is installed elsewhere, pass `--engine-root` or set `UE_ENGINE_ROOT`:
+
+```bash
+./scripts/package_macos.sh --engine-root "/Users/Shared/Epic Games/UE_5.7"
+UE_ENGINE_ROOT="/Users/Shared/Epic Games/UE_5.7" ./scripts/package_macos.sh
+```
+
+To package to another folder:
+
+```bash
+./scripts/package_macos.sh --archive-directory "$HOME/IpcCharacterWorld-Mac"
+```
+
+Packaged output directories are ignored by Git and must not be committed.
 
 ## Project layout
 
@@ -87,6 +147,8 @@ To package to another folder:
 - `Makefile` - builds the examples
 - `scripts/build_editor_windows.ps1` - Windows helper for building the Unreal editor module
 - `scripts/package_windows.ps1` - Windows helper for packaging the game with the same MSVC library fallback
+- `scripts/package_linux.sh` - Linux helper for packaging the game
+- `scripts/package_macos.sh` - macOS helper for packaging the game
 
 ## Build the examples
 
