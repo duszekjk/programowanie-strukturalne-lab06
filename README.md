@@ -48,6 +48,40 @@ If Unreal is installed somewhere else, pass the engine path explicitly:
 .\scripts\build_editor_windows.ps1 -EngineRoot "C:\Program Files\Epic Games\UE_5.7"
 ```
 
+## Windows: opening the editor after a fresh clone or cleanup
+
+If opening the project from Explorer or the Epic Games Launcher shows:
+
+```text
+IpcCharacterWorld could not be compiled. Try rebuilding from source manually.
+```
+
+first build the editor module from PowerShell using the repository helper script:
+
+```powershell
+.\scripts\build_editor_windows.ps1 -EngineRoot "C:\Program Files\Epic Games\5.7"
+```
+
+or, if the engine is installed under the `UE_5.7` folder:
+
+```powershell
+.\scripts\build_editor_windows.ps1 -EngineRoot "C:\Program Files\Epic Games\UE_5.7"
+```
+
+After the script finishes with `Result: Succeeded`, open the editor with the matching engine path:
+
+```powershell
+& "C:\Program Files\Epic Games\5.7\Engine\Binaries\Win64\UnrealEditor.exe" "$PWD\IpcCharacterWorld.uproject"
+```
+
+or:
+
+```powershell
+& "C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\Win64\UnrealEditor.exe" "$PWD\IpcCharacterWorld.uproject"
+```
+
+Do not rely on double-clicking the `.uproject` on lab Windows machines until the module has been built successfully. A double-click or Launcher start may run Unreal without the corrected `LIB` environment used by the helper scripts.
+
 ## Packaging scripts
 
 Do not package from the Unreal Editor UI on lab machines with the incomplete MSVC layout, because the editor process may not have the corrected `LIB` environment. Use the repository scripts instead.
